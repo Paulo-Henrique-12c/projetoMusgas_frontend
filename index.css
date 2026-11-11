@@ -1,0 +1,134 @@
+:root {
+    --fundo: #f4f5fa;
+    --superficie: #ffffff;
+    --texto: #1d1d2b;
+    --texto-suave: #5f6275;
+    --destaque: #4a3fd1;
+    --destaque-escuro: #3a30b0;
+    --borda: #e1e3ee;
+    --perigo: #b3261e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+:focus-visible {
+    outline: 3px solid #f5b301;
+    outline-offset: 2px;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem max(1rem, calc((100% - 720px) / 2));
+    background: var(--destaque);
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+header a {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+header a:hover {
+    background: #ffffff;
+    color: var(--destaque);
+}
+
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+#listaMusicas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.musica {
+    padding: 1rem 1.25rem;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--destaque);
+    border-radius: 10px;
+}
+
+.musica h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+}
+
+.artista {
+    margin: 0;
+    color: var(--destaque);
+    font-weight: 600;
+}
+
+.detalhes {
+    margin: 0.25rem 0 0;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.acoes {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.editar,
+.apagar {
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.editar {
+    background: var(--destaque);
+    border: 2px solid var(--destaque);
+    color: #ffffff;
+}
+
+.editar:hover {
+    background: var(--destaque-escuro);
+    border-color: var(--destaque-escuro);
+}
+
+.apagar {
+    background: transparent;
+    border: 2px solid var(--perigo);
+    color: var(--perigo);
+}
+
+.apagar:hover {
+    background: var(--perigo);
+    color: #ffffff;
+}
