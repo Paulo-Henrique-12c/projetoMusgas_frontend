@@ -1,9 +1,10 @@
-const urlBackend = "http://localhost:3000";
-const listaMusicas = document.getElementById("listaMusicas");
+const urlBackend = "http://localhost:3000"
+
+const listaMusicas = document.getElementById("listaMusicas")
 
 async function buscarMusicas() {
-    const resposta = await fetch(urlBackend);
-    const musicas = await resposta.json();
+    const resposta = await fetch(urlBackend)
+    const musicas = await resposta.json()
 
     musicas.forEach((musica) => {
         listaMusicas.innerHTML += `
@@ -13,13 +14,31 @@ async function buscarMusicas() {
                 <p class="detalhes">${musica.genero} | ${musica.ano} | ${musica.duracao} min</p>
                 <div class="acoes">
                     <a class="editar" href="editar.html?id=${musica.id}">Editar</a>
-                    <button class="apagar">Apagar</button>
+                    <button class="apagar" onclick="apagarMusica(${musica.id})">Apagar</button>
                 </div>
             </article>
-        `;
-    });
+        `
+    })
 }
 
-buscarMusicas();
+buscarMusicas()
+
+async function apagarMusica(id) {
+    const confirmou = confirm("Apaga não, Zé!")
+
+    if (!confirmou) {
+        return
+    }
+
+    const resposta = await fetch(`${urlBackend}/apagar/${id}`, {
+        method: "DELETE"
+    })
+
+    const respostaTransformada = await resposta.json()
+
+    alert(respostaTransformada.mensagem)
+
+    window.location.reload()
+}
 
 
