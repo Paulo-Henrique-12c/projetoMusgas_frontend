@@ -1,4 +1,4 @@
-const urlBackend = "https://vercel.com/henriques-projects-d6c2f75d/projetomusgas/EGdHv3xYk4XQiEejvM87nofzhkSg"
+const urlBackend = "https://vercel.com/henriques-projects-d6c2f75d/projetomusgas"
 
 const parametros = new URLSearchParams(window.location.search)
 const id = parametros.get("id")
