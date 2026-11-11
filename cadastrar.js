@@ -1,4 +1,4 @@
-const urlBackend = "http://localhost:3000"
+const urlBackend = "https://vercel.com/henriques-projects-d6c2f75d/projetomusgas/EGdHv3xYk4XQiEejvM87nofzhkSg"
 
 const inputTitulo = document.getElementById("titulo")
 const inputArtista = document.getElementById("artista")
